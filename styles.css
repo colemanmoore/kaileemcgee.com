@@ -1,0 +1,235 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    min-height: 100%;
+    cursor: url(/images/cursors/nat733.cur), default !important;
+    background: url(/images/bg/stars.gif) repeat;
+}
+
+body.tile1 {
+    background-image: url("/images/bg/Kailee McGee -Professional.jpg");
+    background-size: 150px 180px;
+    background-repeat: repeat;
+}
+
+body.tile2 {
+    background-image: url("/images/bg/IMG_4774.jpeg");
+    background-size: 150px 240px;
+    background-repeat: repeat;
+}
+
+body.tile3 {
+    background-image: url("/images/bg/kailee%20mcgee%20never%20give%20up.png");
+    background-size: 150px 150px;
+    background-repeat: repeat;
+}
+
+a:link, a:hover, a:visited, a:active {
+    cursor: url(/images/cursors/nat740.cur), default !important;
+}
+
+a:hover {
+    color: white;
+}
+a.serious:hover {
+    font-size: 150%;
+}
+
+li {
+    list-style: none;
+}
+
+div.wrapper-1 {
+    width: 100%;
+    position:absolute;
+    top:0;
+}
+
+div.wrapper-2 {
+    background-image: url("/images/bg/kailee portrait art professional.PNG");
+    background-size: 350px 350px;
+    background-repeat: repeat;
+}
+
+div.main {
+    width: 1000px;
+    background: url(/images/bg/stars.gif);
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+div.main-center {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.main-left {
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+div.content {
+    width: 100%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+div.post-item {
+    margin-bottom: 75px;
+}
+
+div.post-item.pod {
+    width: 100%;
+}
+
+div.post-item.pod div {
+    display: inline;
+}
+
+div span.caption {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    margin-top: 10px;
+}
+
+div.side-column {
+    width: 25%;
+    float: left;
+    clear: both;
+}
+
+div.main-column {
+    width: 60%;
+    float:left;
+}
+
+h1 {
+    font-size: 30px;
+    padding-top: 30px;
+}
+
+.marquee {
+    font-style: italic;
+    font-family: serif;
+}
+
+.flashy {
+    color: yellow;
+}
+
+.muted {
+    color: purple;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.content p {
+    margin-top: 20px;
+    line-height: 170%;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+.date-top {
+    text-align: right;
+    padding: 15px;
+}
+
+div.separator {
+    width: 100%;
+    margin-top: 40px;
+}
+
+div.site-map-container {
+    clear: left;
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+    font-variant: small-caps;
+}
+
+div.site-map-container a:visited,
+div.site-map-container a:link,
+div.site-map-container a:hover,
+div.site-map-container a:active {
+    text-decoration: underline;
+    color: #F0F0F0;
+}
+
+div.site-map-container p {
+    color: black;
+    text-align: center;
+}
+
+div.badges {
+    clear: left;
+    text-align: center;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.badges.add-space img {
+    margin-bottom: 5px;
+}
+
+.footer {
+    margin-top: 50px;
+}
+
+.footer span {
+    font-size: 14px;
+    display: block;
+}
+
+.wordpress {
+    text-align: left;
+}
+.wordpress span {
+    font-size: 12px;
+    color: #bbb;
+    text-decoration: underline;
+}
+
+div.video-listing-section .video-column {
+    float: left;
+    width: 50%;
+}
+
+div.video-listing-section .video-column * {
+    display: block;
+}
+
+.rotate90 {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.faq-section {
+    margin-left: 20px;
+    text-align: left;
+}
+
+.faq-section p.question {
+    font-style: italic;
+}
+
+.faq-section p.question:before {
+    content: url('/images/buttons/bwbutton.gif');
+}
+
+.fake-link {
+    color:blue;
+    text-decoration: underline;
+}
