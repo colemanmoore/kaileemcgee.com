@@ -1,1 +1,4 @@
 .idea/
+app/public/images/
+npm-debug.log
+node_modules/

@@ -1,0 +1,19 @@
+{
+  "name": "kaileemcgee.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "watch --spawn=false 'node app/app.js'",
+    "start": "node app/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "devDependencies": {
+    "watch": "^0.16.0"
+  }
+}
