@@ -1,6 +1,5 @@
 $(document).ready(function() {
   var domRoot = document.getElementById('video-listing-section');
-  var videoEmbedById = {};
 
   // Get video json info
   $.getJSON('/videodata', function(data) {
@@ -22,7 +21,6 @@ $(document).ready(function() {
 
         // Map the embed code to its id for the watch page
         if (!!id && !!embed) {
-          videoEmbedById[id] = embed;
           var href = "/watch?id=" + id;
         }
 
@@ -42,11 +40,6 @@ $(document).ready(function() {
       $(domRoot).append(videoSectionList);
 
     });
-
-    var id = getParameterByName("id");
-    if (!!id) {
-      console.log(id);
-    }
 
   });
 

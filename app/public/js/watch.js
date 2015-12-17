@@ -29,7 +29,7 @@ $(document).ready(function() {
 });
 
 function getParamValue(param) {
-  var vars = [], pair, result = "";
+  var pair, result = "";
   var q = document.URL.split('?')[1];
   if(q != undefined){
     q = q.split('&');

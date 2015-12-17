@@ -75,7 +75,7 @@ app.use(function(err, req, res, next) {
   });
 });
 
-var port = (process.env.NODE_ENV==='production' ? 8081 : 3333);
+var port = process.env.PORT || 3333;
 
 var server = app.listen(port, 'localhost', function () {
   var host = server.address().address;
