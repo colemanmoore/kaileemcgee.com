@@ -33,7 +33,7 @@ app
   .get('/projects.html', function(req, res, next) {
     res.sendFile(htmlRoot + 'projects.html');
   })
-  .get('/watch/:id', function(req, res, next) {
+  .get('/watch', function(req, res, next) {
     res.sendFile(htmlRoot + 'watch.html')
   })
   .get('/workshopsandseminars.html', function(req, res, next) {
@@ -74,7 +74,6 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
 
 var server = app.listen(3333, 'localhost', function () {
   var host = server.address().address;

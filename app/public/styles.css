@@ -28,6 +28,12 @@ body.tile3 {
     background-repeat: repeat;
 }
 
+body.other-stars {
+    background-image: url("/images/bg/tile.jpg");
+    background-size: 200px 200px;
+    background-repeat: repeat;
+}
+
 a:link, a:hover, a:visited, a:active {
     cursor: url(/images/cursors/nat740.cur), default !important;
 }
@@ -232,4 +238,36 @@ div.video-listing-section .video-column * {
 .fake-link {
     color:blue;
     text-decoration: underline;
+}
+
+.video-section-header h2 {
+    font-size: 1.4em;
+    font-weight: 200
+}
+
+.video-section-list {
+    line-height: 2em;
+    margin-bottom: 3em;
+}
+
+.video-section-list ul {
+    margin: 0;
+    padding: 0;
+}
+
+.video-section-list a {
+    color: yellow;
+    font-size: 1.1em;
+    letter-spacing:2px;
+    text-decoration: none;
+}
+
+#watch-here {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }

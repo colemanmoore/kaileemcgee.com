@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "watch --spawn=false 'node app/app.js'",
-    "start": "node app/app.js"
+    "watch": "watch --spawn=false 'node app/main.js'",
+    "start": "node app/main.js"
   },
   "author": "",
   "license": "ISC",

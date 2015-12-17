@@ -16,7 +16,6 @@ $(document).ready(function() {
 
       // Add each link to the list list
       section.links.forEach(function(link, linkIndex) {
-
         var id = link.id;
         var text = link.text;
         var embed = link.embed;
@@ -24,7 +23,7 @@ $(document).ready(function() {
         // Map the embed code to its id for the watch page
         if (!!id && !!embed) {
           videoEmbedById[id] = embed;
-          var href = "/watch/" + id;
+          var href = "/watch?id=" + id;
         }
 
         // Or just link to the video online
@@ -44,9 +43,13 @@ $(document).ready(function() {
 
     });
 
-    console.log(videoEmbedById);
+    var id = getParameterByName("id");
+    if (!!id) {
+      console.log(id);
+    }
 
   });
 
 });
+
 
