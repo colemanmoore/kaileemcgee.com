@@ -21,7 +21,7 @@
       },
       {
         "id": "instagram",
-        "embed": "",
+        "embed": "<iframe width=\"900\" height=\"506\" src=\"https://www.youtube.com/embed/8kTQ_PHOXy0\" frameborder=\"0\" allowfullscreen></iframe>",
         "lives": "https://www.youtube.com/watch?v=8kTQ_PHOXy0",
         "text": "INSTAGRAM BREAK!"
       },
