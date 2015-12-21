@@ -1,7 +1,9 @@
 $(document).ready(function() {
 
-  var targetId = getParamValue("id");
-  var embedCode;
+  var
+    targetId = getParamValue("id"),
+    codeToAdd,
+    isMultiple = false;
 
   // Get video json info
   $.getJSON('/videodata', function(data) {
@@ -9,19 +11,33 @@ $(document).ready(function() {
     data.forEach(function(section) {
       section.links.forEach(function(link) {
         var id = link.id;
-        var embed = link.embed;
+        if (!!id && id===targetId) {
 
-        // Map the embed code to its id for the watch page
-        if (!!id && !!embed) {
-          if (id===targetId) {
-            embedCode = embed;
+          var embed = link.embed;
+          if (!!embed) {
+
+            if (Array.isArray(embed)) {
+              isMultiple = true;
+
+              embed.forEach(function(item) {
+                codeToAdd += item;
+              });
+
+            } else {
+              codeToAdd = embed;
+            }
           }
         }
       });
     });
 
-    if (!!embedCode) {
-      $('#watch-here').append(embedCode);
+
+    if (!!codeToAdd) {
+      $('#watch-here').append(codeToAdd);
+    }
+
+    if (isMultiple) {
+      $('#watch-here').addClass('multiple');
     }
 
   });
