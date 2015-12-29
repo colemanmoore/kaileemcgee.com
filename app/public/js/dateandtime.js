@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", function() {
   todaysDate();
 });
 
@@ -8,8 +8,7 @@ function todaysDate() {
   setInterval(updateTime, 1000);
 
   function updateTime() {
-    time = new Date();
-    var text = formatDate(time);
+    var text = formatDate(new Date());
     var dateNode = document.getElementById("todays-date");
     while (dateNode.firstChild) {
       dateNode.removeChild(dateNode.firstChild);

@@ -38,6 +38,10 @@ a:link, a:hover, a:visited, a:active {
     cursor: url(/images/cursors/nat740.cur), default !important;
 }
 
+.pencil-cursor {
+    cursor:url(http://cur.cursors-4u.net/others/oth-5/oth509.png), default !important
+}
+
 a:hover {
     color: white;
 }
@@ -99,11 +103,19 @@ div.post-item.pod div {
     display: inline;
 }
 
-div span.caption {
+div.post-item.pod img {
+    margin-right: 3px;
+}
+
+div .caption {
     display: block;
     font-family: Arial, Helvetica, sans-serif;
     font-size: small;
     margin-top: 10px;
+}
+
+div .caption span {
+    line-height: 0.5em;
 }
 
 div.side-column {
@@ -183,8 +195,17 @@ div.badges {
     width: 100%;
 }
 
-.badges.add-space img {
+div.badges img {
+    margin: 2px;
+}
+
+div.badges.add-space img {
     margin-bottom: 5px;
+}
+
+a.twitter-timeline {
+    width: 220px;
+    height: 1000px;
 }
 
 .footer {

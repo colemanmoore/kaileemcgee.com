@@ -1,49 +1,69 @@
 var express = require('express');
 var app = express();
 
+app.set('view engine', 'jade');
+
 app.use(express.static(__dirname + '/public'));
 
-var htmlRoot = __dirname + '/public/html/';
+var htmlRoot = __dirname + '/public/views/';
+var assetsRoot = __dirname + '/public/assets/';
+
+var faqData = require('./faq.json');
+var filmData = require('./film_links.json');
+var filmDataFlat = flattenFilmData(filmData);
 
 app
-  .get('/', function (req, res, next) {
-    res.sendFile(htmlRoot + 'enter.html');
+  .get('/', function (req, res) {
+    res.render(htmlRoot + 'enter');
   })
-  .get('/index.html', function(req, res, next) {
-    res.sendFile(htmlRoot + 'enter.html');
+  .get('/index.html', function(req, res) {
+    res.render(htmlRoot + 'enter');
   })
-  .get('/about.html.html', function(req, res, next) {
-    res.sendFile(htmlRoot + 'about.html.html');
+  .get('/about.html.html', function(req, res) {
+    res.render(htmlRoot + 'about');
   })
-  .get('/contact.html', function(req, res, next) {
-    res.sendFile(htmlRoot + 'contact.html');
+  .get('/contact.html', function(req, res) {
+    res.render(htmlRoot + 'contact');
   })
-  .get('/faq.html', function(req, res, next) {
-    res.sendFile(htmlRoot + 'faq.html');
+  .get('/faq.html', function(req, res) {
+    res.render(htmlRoot + 'faq', {
+      data: faqData
+    });
   })
-  .get('/filmandvideo.html', function(req, res, next) {
-    res.sendFile(htmlRoot + 'filmandvideo.html');
+  .get('/filmandvideo.html', function(req, res) {
+    res.render(htmlRoot + 'filmandvideo', {
+      data: filmData
+    });
   })
-  .get('/home.html', function(req, res, next) {
-    res.sendFile(htmlRoot + 'home.html');
+  .get('/home.html', function(req, res) {
+    res.render(htmlRoot + 'home');
   })
-  .get('/music.html', function(req, res, next) {
-    res.sendFile(htmlRoot + 'music.html');
+  .get('/music.html', function(req, res) {
+    res.render(htmlRoot + 'music');
   })
-  .get('/projects.html', function(req, res, next) {
-    res.sendFile(htmlRoot + 'projects.html');
+  .get('/projects.html', function(req, res) {
+    res.render(htmlRoot + 'projects');
   })
-  .get('/watch', function(req, res, next) {
-    res.sendFile(htmlRoot + 'watch.html')
+  .get('/promoslashindustry', function(req,res) {
+    res.render(htmlRoot + 'promoslashindustry');
   })
-  .get('/workshopsandseminars.html', function(req, res, next) {
-    res.sendFile(htmlRoot + 'workshopsandseminars.html');
+  .get('/watch/:id', function(req, res) {
+    console.log(filmDataFlat[req.params.id]);
+    res.render(htmlRoot + 'watch', {
+      embedCode: filmDataFlat[req.params.id]
+    })
+  })
+  .get('/workshopsandseminars.html', function(req, res) {
+    res.render(htmlRoot + 'workshopsandseminars');
+  })
+
+  .get(/.*\.pdf/, function(req,res) {
+    var filename = req.originalUrl.split('/')[1];
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.header('content-type', 'application/pdf');
+    res.sendFile(assetsRoot + filename);
   });
-
-
-app.get('/videodata', function(req, res, next) {
-  res.sendFile(__dirname + '/film_links.json');
-});
 
 
 app.get('*', function(req, res) {
@@ -51,29 +71,20 @@ app.get('*', function(req, res) {
 });
 
 
-// development error handler
-// will print stacktrace
+// development error handler, will print stacktrace
 if (app.get('env') === 'development') {
 
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
-    });
   });
 
+} else {
+
+  // production error handler, no stacktraces leaked to user
+  app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+  });
 }
-
-// production error handler
-// no stacktraces leaked to user
-app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
-});
 
 var port = process.env.PORT || 3333;
 
@@ -83,3 +94,20 @@ var server = app.listen(port, 'localhost', function () {
 
   console.log('kaileemcgee.com listening at http://%s:%s', host, port);
 });
+
+function flattenFilmData(filmData) {
+  var flat = {};
+  filmData.forEach(function(section) {
+    section.links.forEach(function(link) {
+      if (!!link.id && !!link.embed) {
+
+        if (Array.isArray(  link.embed)) {
+          flat[link.id] = link.embed;
+        } else {
+          flat[link.id] = [link.embed];
+        }
+      }
+    })
+  });
+  return flat;
+}
