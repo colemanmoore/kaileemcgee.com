@@ -41,6 +41,9 @@ app
   .get('/music.html', function(req, res) {
     res.render(htmlRoot + 'music');
   })
+  .get('/photography.html', function(req, res) {
+    res.render(htmlRoot + 'photography');
+  })
   .get('/projects.html', function(req, res) {
     res.render(htmlRoot + 'projects');
   })
@@ -48,21 +51,12 @@ app
     res.render(htmlRoot + 'promoslashindustry');
   })
   .get('/watch/:id', function(req, res) {
-    console.log(filmDataFlat[req.params.id]);
     res.render(htmlRoot + 'watch', {
       embedCode: filmDataFlat[req.params.id]
     })
   })
   .get('/workshopsandseminars.html', function(req, res) {
     res.render(htmlRoot + 'workshopsandseminars');
-  })
-
-  .get(/.*\.pdf/, function(req,res) {
-    var filename = req.originalUrl.split('/')[1];
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    res.header('content-type', 'application/pdf');
-    res.sendFile(assetsRoot + filename);
   });
 
 
