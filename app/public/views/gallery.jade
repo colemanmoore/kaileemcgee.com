@@ -1,0 +1,81 @@
+doctype html
+html(lang='en')
+  head
+    include ../includes/head
+    link(rel='stylesheet', href='/css/gallery.css')
+  body.tile1
+    div.wrapper-1
+      div.main.main-center
+        div(style='height:50px')
+        div.content#gallery-container
+
+          div#top-display-media
+          table(align='center',width='100%',cellspacing='1',cellpadding='0',class='maintable ')
+            - var pos = parseInt(position);
+            - var firstUrl = '/photography/displayimage.php?position=0#top_display_media';
+            - var lastUrl = '/photography/displayimage.php?position=' + (album.length-1) + '#top_display_media';
+            - var nextUrl = (pos == album.length-1) ? '#' : '/photography/displayimage.php?position='+ (pos+1) + '#top_display_media';
+            - var prevUrl = '/photography/displayimage.php?position='+ (pos-1) + '#top_display_media';
+            tr
+              td(align='center',valign='middle',class='navmenu',width='48')
+                a(href='thumbnails.php?page=1', class='navmenu_pic', title='Return to the thumbnail page')
+                  img(src='/images/gallery/icons/back-to-thumbnails.png', align='middle', border='0', alt="Return to the thumbnail page")
+              td(id='pic_info_button',align='center',valign='middle',class='navmenu',width='48')
+              td(align='center',valign='middle',class='navmenu',width='100%') !{album[pos].title} (!{pos+1}/!{album.length})
+
+              td(align='center',valign='middle',class='navmenu',width='48')
+                a(href=firstUrl,class='navmenu_pic',title='Return to start')
+                  img(src='/images/gallery/icons/start.png',border='0',align='middle',alt='Return to start')
+              td(align='center',valign='middle',class='navmenu',width='48')
+                a(href=prevUrl,class='navmenu_pic',title='See previous file')
+                  img(src='/images/gallery/icons/prev.png',border='0',align='middle',alt='See previous file')
+              td(align='center',valign='middle',class='navmenu',width='48')
+                a(href=nextUrl,class='navmenu_pic',title='See next file')
+                  img(src='/images/gallery/icons/next.png',border='0',align='middle',alt='See next file')
+              td(align='center',valign='middle',class='navmenu',width='48')
+                a(href=lastUrl,class='navmenu_pic',title='Skip to end')
+                  img(src='/images/gallery/icons/end.png',border='0',align='middle',alt='Skip to end')
+
+          table(align='center',width='100%',cellspacing='1',cellpadding='0',class='maintable ')
+            tr
+              td(align='center',class='display_media',nowrap='nowrap')
+                table(width='100%',cellspacing='2',cellpadding='0')
+                  tr
+                    td(align='center',style='!{SLIDESHOW_STYLE}')
+                      a(href='javascript:;',onclick='MM_openBrWindow("/photography/displayimage.php?fullsize=1,1051743903568715e7aa55d,scrollbars=yes,toolbar=no,status=no,resizable=yes,width=1333,height=2003')
+                        img(src=album[position].url,class='image',border='0',alt='Click to view full size image')
+                        br
+            tr
+              td
+                table(width='100%',cellspacing='2',cellpadding='0',class='tableb tableb_alternate')
+                  tr
+                    td(align='center')
+
+        include ../includes/site-map.html
+        include ../includes/footer
+
+    script.
+      var js_vars = {
+        "debug": false,
+        "icon_dir": "\/images\/gallery\/icons\/",
+        "lang_close": "Close",
+        "icon_close_path": "\/images\/gallery\/icons\/close.png",
+        "cookies_allowed": true,
+        "position": !{position},
+        "cat": false,
+        "buttons": {
+          "pic_info_title": "Display\/hide file information",
+          "pic_info_btn": "",
+          "slideshow_tgt": "displayimage.php?position=" + !{position} + "&amp;slideshow=5000#top_display_media",
+          "slideshow_title": "Slideshow",
+          "slideshow_btn": "",
+          "loc": ""
+        },
+        "theme_dir": "",
+        "thumb_width": "100",
+        "thumb_use": "ex",
+        "max_item": "5",
+        "count": !{album.length}
+      };
+    script(src='/js/jquery.min.js')
+    script(src='/js/displayimage.js')

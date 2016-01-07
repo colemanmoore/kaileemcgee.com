@@ -1,15 +1,33 @@
 doctype html
 html(lang='en')
-  include ../includes/head
+  head
+    include ../includes/head
+    link(rel='stylesheet', href='/css/justifiedGallery.min.css')
   body.tile1
     div.wrapper-1
       div.main.main-center
         include ../includes/date
         div.banner
           img(src='/images/projects/Project%20Banner.gif', width='1000px', height='400px')
-        div.post-item
-          h1 Coming Soon
+
+        h3.flashy Living To Post
+        div.post-item#living-to-post
+          each image in livingToPost
+            - var thumbnail = image.thumb || image.src
+            a(href='/images/livingtopost/' + image.src)
+              img(src='/images/livingtopost/thumbnails/' + thumbnail)
 
         include ../includes/site-map.html
         include ../includes/badges
         include ../includes/footer
+
+    script(src='/js/jquery.min.js')
+    script(src='/js/jquery.justifiedGallery.min.js')
+    script.
+      $('#living-to-post').justifiedGallery({
+        waitThumbnailsLoad: true,
+        margins: 7,
+        rowHeight: 200,
+        randomize: true,
+        imagesAnimationDuration: 500
+      });

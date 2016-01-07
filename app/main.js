@@ -6,17 +6,15 @@ app.set('view engine', 'jade');
 app.use(express.static(__dirname + '/public'));
 
 var htmlRoot = __dirname + '/public/views/';
-var assetsRoot = __dirname + '/public/assets/';
 
-var faqData = require('./faq.json');
-var filmData = require('./film_links.json');
+var faqData = require('./data/faq.json');
+var filmData = require('./data/film_links.json');
 var filmDataFlat = flattenFilmData(filmData);
+var photoData = require('./data/photo.json');
+var livingToPost = require('./data/livingtopost.json');
 
 app
-  .get('/', function (req, res) {
-    res.render(htmlRoot + 'enter');
-  })
-  .get('/index.html', function(req, res) {
+  .get(['/', '/index.html'], function (req, res) {
     res.render(htmlRoot + 'enter');
   })
   .get('/about.html.html', function(req, res) {
@@ -41,11 +39,39 @@ app
   .get('/music.html', function(req, res) {
     res.render(htmlRoot + 'music');
   })
-  .get('/photography.html', function(req, res) {
-    res.render(htmlRoot + 'photography');
+  .get('/photography/displayimage.php', function(req, res) {
+
+    var album = photoData[0].photos;
+    var vars = {
+      album: album,
+      position: req.query.position || 0
+    };
+    res.render(htmlRoot + 'gallery', vars);
+  })
+  .get(['/photography.html', '/photography/', '/photography/thumbnails.php'], function(req, res) {
+
+    var album = photoData[0];
+    var vars = {
+      album: album
+    };
+    res.render(htmlRoot + 'thumbnails', vars);
+
+  })
+  .get('/photography/nextthumb.php', function(req, res) {
+    var album = req.param.album || 0;
+    var position = req.query.pos;
+    if (!!position) {
+      res.json(photoData[album].photos[position]);
+    } else {
+      res.status(400).send({
+        error: 'Request missing position parameter'
+      })
+    }
   })
   .get('/projects.html', function(req, res) {
-    res.render(htmlRoot + 'projects');
+    res.render(htmlRoot + 'projects', {
+      livingToPost: livingToPost
+    });
   })
   .get('/promoslashindustry', function(req,res) {
     res.render(htmlRoot + 'promoslashindustry');

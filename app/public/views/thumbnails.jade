@@ -1,0 +1,30 @@
+doctype html
+html(lang='en')
+  head
+    include ../includes/head
+    link(rel='stylesheet', href='/css/gallery.css')
+  body.tile1
+    div.wrapper-1
+      div.main.main-center
+        div(style='height:50px')
+        div.content#gallery-container
+
+          table#thumbnails(align='center',width='100%',cellspacing='1',cellpadding='0',class='maintable ')
+            tr
+              td(class='tableh1',colspan='5')
+                table(width='100%',cellpadding='0',cellspacing='0',border='0')
+                  tr
+                    td(style='vertical-align:top',class='statlink')
+                      h2= album.title
+            each image, index in album.photos
+              if (index % 5 == 0)
+                | <tr>
+              td(valign='top',class='thumbnails',width ='20%',align='center')
+                table(width='100%',cellpadding='0',cellspacing='0')
+                  tr
+                    td(align='center')
+                      a(href='/photography/displayimage.php?album='+album.album+'&position='+index+'#top_display_media')
+                        img(src=image.url,class='image thumbnail',width='100',height='100',border='0',alt=image.title,title=image.title)
+
+        include ../includes/site-map.html
+        include ../includes/footer
