@@ -10,18 +10,23 @@ html(lang='en')
         div.banner(style='margin-bottom:50px')
           img(src='/images/promoslashindustry/banner.jpg')
 
-        div.post-item
-          img(src='/images/promoslashindustry/Portraits/kailee mcgee portrait 2014.png', width='500px')
-          span.caption kailee mcgee portrait 2014
-        div.post-item
-          img(src='/images/promoslashindustry/Portraits/Kailee McGee sentimental.jpg', width='500px')
-          span.caption Kailee McGee sentimental
-        div.post-item
-          img(src='/images/promoslashindustry/Portraits/kailee mcgee - nighttime confusion.png', width='500px')
-          span.caption kailee mcgee - nighttime confusion
-        div.post-item
-          img(src='/images/promoslashindustry/Portraits/kailee mcgee casual.png', width='500px')
-          span.caption kailee mcgee casual
+        -
+          var posts = [
+          { src: "kailee mcgee at work LA.jpg", caption: "kailee mcgee at work LA" },
+          { src: "kailee mcgee at work Laguna beach.jpg", caption: "kailee mcgee at work Laguna beach" },
+          { src: "kailee mcgee at work NY also.jpg", caption: "kailee mcgee at work NY also" },
+          { src: "kailee mcgee black and white on set.jpg", caption: "kailee mcgee black and white on set" },
+          { src: "reality me.png", caption: "reality me" },
+          { src: "kailee mcgee portrait 2014.png", caption: "kailee mcgee portrait 2014" },
+          { src: "Kailee McGee sentimental.jpg", caption: "Kailee McGee sentimental" },
+          { src: "kailee mcgee - nighttime confusion.png", caption: "kailee mcgee - nighttime confusion" },
+          { src: "kailee mcgee at work LA.jpg", caption: "kailee mcgee casual" }
+          ];
+
+        each post in posts
+          div.post-item
+            img(src='/images/promoslashindustry/' + post.src, width='500px')
+            span.caption= post.caption
 
         include  ../includes/site-map.html
         include ../includes/footer
