@@ -76,6 +76,9 @@ app
   .get('/promoslashindustry', function(req,res) {
     res.render(htmlRoot + 'promoslashindustry');
   })
+  .get('/testimonials.html', function(req, res) {
+    res.render(htmlRoot + 'testimonials');
+  })
   .get('/watch/:id', function(req, res) {
     res.render(htmlRoot + 'watch', {
       embedCode: filmDataFlat[req.params.id]

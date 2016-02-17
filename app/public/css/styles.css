@@ -28,6 +28,30 @@ body.tile3 {
     background-repeat: repeat;
 }
 
+body.tile4 {
+    background-image: url("/images/bg/kailee.jpeg");
+    background-size: 150px 150px;
+    background-repeat: repeat;
+}
+
+body.tile5 {
+    background-image: url("/images/bg/kailee mcgee energy.jpg");
+    background-size: 200px 100px;
+    background-repeat: repeat;
+}
+
+body.tile6 {
+    background-image: url("/images/bg/Kailee McGee serene black and white.jpg");
+    background-size: 150px 220px;
+    background-repeat: repeat;
+}
+
+body.tile7 {
+    background-image: url("/images/bg/kailee mcgee casual.png");
+    background-size: 150px 150px;
+    background-repeat: repeat;
+}
+
 body.other-stars {
     background-image: url("/images/bg/tile.jpg");
     background-size: 200px 200px;
@@ -310,4 +334,12 @@ div.video-listing-section .video-column * {
 }
 
 #living-to-post {
+}
+
+.testimonials {
+    padding: 0 50px;
+}
+
+.testimonials iframe {
+    margin: 25px 50px;
 }
