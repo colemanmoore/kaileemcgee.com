@@ -343,3 +343,14 @@ div.video-listing-section .video-column * {
 .testimonials iframe {
     margin: 25px 50px;
 }
+
+#visitor-counter {
+    padding: 8px;
+    color: black;
+    opacity: 0.5;
+    font-size: 0.8em;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    background-color: #979797;
+    font-weight: bold;
+}

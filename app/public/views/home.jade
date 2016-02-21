@@ -12,6 +12,7 @@ html(lang='en')
         div.content
           div.side-column
             a.twitter-timeline(width='220px', height='1000px', href='https://twitter.com/kittypawsxoxo', data-widget-id="633465888130232320") Tweets by @kittpawsxoxo
+
             div(style='padding-top:50px')
               a.flashy(href='/testimonials.html').
                 *** Watch client testimonials ***
@@ -88,7 +89,11 @@ html(lang='en')
             img(src='../images/buttons/facebook_2015_logo_detail.png', width='200px')
           span.caption Let's Connect and Network!
 
+        div(style="margin-bottom: 20px")
+          span#visitor-counter
+
         include ../includes/site-map.html
         include ../includes/badges
         include ../includes/footer
         script(type='text/javascript', src='../js/twitter.js')
+        script(type='text/javascript', src='../js/counter.js')
