@@ -39,9 +39,10 @@ app
   .get('/music.html', function(req, res) {
     res.render(htmlRoot + 'music');
   })
+
   .get('/photography/displayimage.php', function(req, res) {
 
-    var album = photoData[0].photos;
+    var album = photoData[0];
     var vars = {
       album: album,
       position: req.query.position || 0
@@ -68,11 +69,46 @@ app
       })
     }
   })
+
+  .get('/hashtagopenbook/displayimage.php', function(req, res) {
+
+    var album = photoData[1];
+    var vars = {
+      album: album,
+      position: req.query.position || 0
+    };
+    res.render(htmlRoot + 'gallery', vars);
+  })
+  .get(['hashtagopenbook.html', '/hashtagopenbook/', '/hashtagopenbook/thumbnails.php'], function(req, res) {
+    var album = photoData[1];
+    var vars = {
+      album: album
+    };
+    res.render(htmlRoot + 'thumbnails', vars);
+  })
+  .get('/photography/nextthumb.php', function(req, res) {
+    var album = req.param.album || 1;
+    var position = req.query.pos;
+    if (!!position) {
+      res.json(photoData[album].photos[position]);
+    } else {
+      res.status(400).send({
+        error: 'Request missing position parameter'
+      })
+    }
+  })
+
+
   .get('/projects.html', function(req, res) {
-    res.render(htmlRoot + 'projects', {
+    res.render(htmlRoot + 'projects');
+  })
+  .get('/livingtopost.html', function(req, res) {
+    res.render(htmlRoot + 'livingtopost', {
       livingToPost: livingToPost
     });
   })
+
+
   .get('/promoslashindustry', function(req,res) {
     res.render(htmlRoot + 'promoslashindustry');
   })

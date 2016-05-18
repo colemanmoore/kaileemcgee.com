@@ -6,28 +6,20 @@ html(lang='en')
   body.tile1
     div.wrapper-1
       div.main.main-center
-        include ../includes/date
         div.banner
           img(src='/images/projects/Project%20Banner.gif', width='1000px', height='400px')
 
-        h3.flashy Living To Post
-        div.post-item#living-to-post
-          each image in livingToPost
-            - var thumbnail = image.thumb || image.src
-            a(href='/images/livingtopost/' + image.src)
-              img(src='/images/livingtopost/thumbnails/' + thumbnail)
+        ul#projects-links-list
+          img(src='/images/projects/boy_drinks.gif')
+          li
+            a(href='/livingtopost.html') Living To Post
+
+          li
+            a(href='/hashtagopenbook') # <img src='/images/buttons/openbook.png' height='35px'/>
+
+          li
+            a(href='http://sunnynookdrive.com') Sunnynook Drive
 
         include ../includes/site-map.html
         include ../includes/badges
         include ../includes/footer
-
-    script(src='/js/jquery.min.js')
-    script(src='/js/jquery.justifiedGallery.min.js')
-    script.
-      $('#living-to-post').justifiedGallery({
-        waitThumbnailsLoad: true,
-        margins: 7,
-        rowHeight: 200,
-        randomize: true,
-        imagesAnimationDuration: 500
-      });

@@ -2,6 +2,8 @@
   {
     "album": 1,
     "title": "Photography",
+    "homeRoute": "photography",
+    "gridWidth": 5,
     "photos": [
       {
         "url": "/images/photography/I like pizza, Steve.jpg",
@@ -146,6 +148,50 @@
       {
         "url": "/images/photography/pssst.jpg",
         "title": "pssst.jpg"
+      }
+    ]
+  },
+  {
+    "album": 2,
+    "title": "#openbook",
+    "homeRoute": "hashtagopenbook",
+    "gridWidth": 3,
+    "photos": [
+      {
+        "url": "/images/openbook/Bringing out the Best in People - Kailee McGee.jpeg",
+        "title": "Bringing out the Best in People - Kailee McGee"
+      },
+      {
+        "url": "/images/openbook/How Not to Split Up - Kailee McGee.jpeg",
+        "title": "How Not to Split Up - Kailee McGee"
+      },
+      {
+        "url": "/images/openbook/How To Get a Man To Make a Commitment -Or Know When He Never Will.jpeg",
+        "title": "How To Get a Man To Make a Commitment -Or Know When He Never Will"
+      },
+      {
+        "url": "/images/openbook/How to Live with Another Person - Kailee McGee.jpeg",
+        "title": "How to Live with Another Person - Kailee McGee"
+      },
+      {
+        "url": "/images/openbook/How to Look Rich and Achieve Sexual Ecstasy - Kailee McGee.jpeg",
+        "title": "How to Look Rich and Achieve Sexual Ecstasy - Kailee McGee"
+      },
+      {
+        "url": "/images/openbook/How to Make Love to a Man.jpeg",
+        "title": "How to Make Love to a Man"
+      },
+      {
+        "url": "/images/openbook/Shyness - Kailee McGee.jpeg",
+        "title": "Shyness - Kailee McGee"
+      },
+      {
+        "url": "/images/openbook/The Power of Sexual Surrender - Kailee McGee.jpeg",
+        "title": "The Power of Sexual Surrender - Kailee McGee"
+      },
+      {
+        "url": "/images/openbook/Treasury of Positive Answers.jpeg",
+        "title": "Treasury of Positive Answers"
       }
     ]
   }

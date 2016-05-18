@@ -12,16 +12,16 @@ html(lang='en')
           div#top-display-media
           table(align='center',width='100%',cellspacing='1',cellpadding='0',class='maintable ')
             - var pos = parseInt(position);
-            - var firstUrl = '/photography/displayimage.php?position=0#top_display_media';
-            - var lastUrl = '/photography/displayimage.php?position=' + (album.length-1) + '#top_display_media';
-            - var nextUrl = (pos == album.length-1) ? '#' : '/photography/displayimage.php?position='+ (pos+1) + '#top_display_media';
-            - var prevUrl = '/photography/displayimage.php?position='+ (pos-1) + '#top_display_media';
+            - var firstUrl = '/'+album.homeRoute+'/displayimage.php?position=0#top_display_media';
+            - var lastUrl = '/'+album.homeRoute+'/displayimage.php?position=' + (album.length-1) + '#top_display_media';
+            - var nextUrl = (pos == album.length-1) ? '#' : '/'+album.homeRoute+'/displayimage.php?position='+ (pos+1) + '#top_display_media';
+            - var prevUrl = '/'+album.homeRoute+'/displayimage.php?position='+ (pos-1) + '#top_display_media';
             tr
               td(align='center',valign='middle',class='navmenu',width='48')
                 a(href='thumbnails.php?page=1', class='navmenu_pic', title='Return to the thumbnail page')
                   img(src='/images/gallery/icons/back-to-thumbnails.png', align='middle', border='0', alt="Return to the thumbnail page")
               td(id='pic_info_button',align='center',valign='middle',class='navmenu',width='48')
-              td(align='center',valign='middle',class='navmenu',width='100%') !{album[pos].title} (!{pos+1}/!{album.length})
+              td(align='center',valign='middle',class='navmenu',width='100%') !{album.photos[pos].title} (!{pos+1}/!{album.photos.length})
 
               td(align='center',valign='middle',class='navmenu',width='48')
                 a(href=firstUrl,class='navmenu_pic',title='Return to start')
@@ -42,8 +42,8 @@ html(lang='en')
                 table(width='100%',cellspacing='2',cellpadding='0')
                   tr
                     td(align='center',style='!{SLIDESHOW_STYLE}')
-                      a(href='javascript:;',onclick='MM_openBrWindow("/photography/displayimage.php?fullsize=1,1051743903568715e7aa55d,scrollbars=yes,toolbar=no,status=no,resizable=yes,width=1333,height=2003')
-                        img(src=album[position].url,class='image',border='0',alt='Click to view full size image')
+                      a(href='javascript:;',onclick='MM_openBrWindow("/'+album.homeRoute+'/displayimage.php?fullsize=1,1051743903568715e7aa55d,scrollbars=yes,toolbar=no,status=no,resizable=yes,width=1333,height=2003')
+                        img(src=album.photos[position].url,class='image',border='0',alt='Click to view full size image')
                         br
             tr
               td
@@ -75,7 +75,7 @@ html(lang='en')
         "thumb_width": "100",
         "thumb_use": "ex",
         "max_item": "5",
-        "count": !{album.length}
+        "count": !{album.photos.length}
       };
     script(src='/js/jquery.min.js')
     script(src='/js/displayimage.js')
