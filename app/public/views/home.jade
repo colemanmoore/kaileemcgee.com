@@ -20,9 +20,13 @@ html(lang='en')
             a.twitter-timeline(width='220px', height='1000px', href='https://twitter.com/kittypawsxoxo', data-widget-id="633465888130232320") Tweets by @kittpawsxoxo
 
             div(style='padding-top:50px')
+              div
+                img(src='/images/home/clapping.gif')
               a.flashy(href='/testimonials.html').
                 *** Watch client testimonials ***
                 CLICK HERE!!
+              div
+                img(src='/images/home/clapping.gif' style='border:0;transform:scale(-1,1); -webkit-transform:scale(-1,1); -moz-transform:scale(-1,1); -o-transform:scale(-1,1)')
 
           div.main-column
 
@@ -104,8 +108,13 @@ html(lang='en')
             img(src='../images/buttons/facebook_2015_logo_detail.png', width='200px')
           span.caption Let's Connect and Network!
 
-        div(style="margin-bottom: 20px")
-          span#visitor-counter
+        div(style="margin-bottom: 20px;")
+          div(style='display:inline-block; height:100%; vertical-align:middle')
+            img(src='/images/buttons/three_gears.gif' width='40px')
+          div(style='display:inline-block; height:100%; vertical-align:middle; margin:0 5px')
+            span#visitor-counter
+          div(style='display:inline-block; height:100%; vertical-align:middle')
+            img(src='/images/buttons/three_gears.gif' width='40px')
 
         include ../includes/site-map.html
         include ../includes/badges
