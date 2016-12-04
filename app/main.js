@@ -145,7 +145,7 @@ if (app.get('env') === 'development') {
   });
 }
 
-var port = process.env.PORT || 3333;
+var port = process.env.PORT || 5000;
 
 var server = app.listen(port, 'localhost', function () {
   var host = server.address().address;
