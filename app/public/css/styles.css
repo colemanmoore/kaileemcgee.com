@@ -375,3 +375,21 @@ ul#projects-links-list li {
 ul#projects-links-list li a img {
   margin-bottom: -5px;
 }
+
+.client-list {
+  padding: 10px;
+}
+
+.client-list div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+}
+
+.client-list img {
+  width: 10%;
+  flex: 0 1 auto;
+  margin: 10px;
+}
