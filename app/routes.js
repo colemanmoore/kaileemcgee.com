@@ -63,7 +63,6 @@ module.exports = {
       .get('/photography/displayimage.php', function(req, res) {
 
         var album = photoData[0];
-        console.log(album);
         var vars = {
           album: album,
           position: req.query.position || 0
