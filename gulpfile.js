@@ -11,7 +11,6 @@ var
   autoprefixer  = require('gulp-autoprefixer'),
   concatcss     = require('gulp-concat-css'),
   bower         = require('main-bower-files'),
-  browserify    = require('gulp-browserify'),
   uglify        = require('gulp-uglify'),
   gls           = require('gulp-live-server');
 
@@ -36,7 +35,6 @@ gulp.task('js', ['clean:js', 'vendorjs'], function() {
 // Bundle JS dependencies
 gulp.task('vendorjs', function() {
   return gulp.src(bower())
-    //.pipe(browserify({ transform: ['debowerify'], debug: !IS_PROD }))
     .pipe(concat('vendor.js'))
     .pipe(IS_PROD ? uglify() : through())
     .pipe(gulp.dest(BUILD_DIR))
