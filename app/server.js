@@ -2,9 +2,10 @@
 
 var
   path = require('path'),
-  env = process.env.NODE_ENV,
+  //env = process.env.NODE_ENV,
   express = require('express'),
-  app = express();
+  app = express(),
+  env = app.get('NODE_ENV');
 
 app.set('env', env || 'production');
 app.set('port', process.env.PORT || 3333);
