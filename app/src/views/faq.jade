@@ -1,0 +1,21 @@
+extends layout1
+block page-content
+  body.tile4
+    div.wrapper-1
+      div.main.main-center
+        include partials/date
+
+        div.banner(style='margin-bottom: 100p')
+          img(src='/images/FAQs/kailee%20FAQ%20banner.jpg', width='1000px', height='300px')
+
+        img(src='/images/FAQs/Kailee%20McGee.gif')
+
+        div.faq-section
+          each item in data
+            p.question !{item.q}
+            p.answer !{item.a}
+
+        img(src='/images/FAQs/catsmail.gif')
+
+        include partials/site-map
+        include partials/footer

@@ -1,0 +1,27 @@
+extends layout1
+block page-content
+  body.tile1
+    div.wrapper-1
+      div.main.main-center
+        div(style='height:50px')
+        - var gridWidth = album.gridWidth || 5
+        div.content#gallery-container(style=(gridWidth < 4 ? 'width:40%' : ''))
+
+          table#thumbnails(align='center',width='100%',cellspacing='1',cellpadding='0',class='maintable ')
+            tr
+              td(class='tableh1', colspan=gridWidth)
+                table(width='100%',cellpadding='0',cellspacing='0',border='0')
+                  tr
+                    td(style='vertical-align:top',class='statlink')
+                      h2= album.title
+            each image, index in album.photos
+              if (index % gridWidth == 0)
+                | <tr>
+              td(valign='top',class='thumbnails',align='center')
+                table(width='100%',cellpadding='0',cellspacing='0')
+                  tr
+                    td(align='center')
+                      a(href='/' + album.homeRoute + '/displayimage.php?album=' + album.album + '&position=' + index + '#top_display_media')
+                        img(src=image.url,class='image thumbnail',width='100',height='100',border='0',alt=image.title,title=image.title)
+        include partials/site-map
+        include partials/footer

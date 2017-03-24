@@ -1,0 +1,27 @@
+extends layout1
+block page-content
+  body.tile2
+    div.wrapper-1
+      div.main.main-center
+        include partials/date
+
+        div(style='margin-bottom: 20px')
+          img(src='/images/filmandvideo/films%20and%20videos%20banner.jpg', width='1000px', height='400px')
+
+        img(src='/images/filmandvideo/b-stuff.gif')
+
+        div#video-listing-section
+          each section in data
+            div.video-section-header
+              h2= section.sectionHeader
+            div.video-section-list
+              ul
+                each link in section.links
+                  li
+                    -
+                      var linkDest = '/watch/' + link.id;
+                      if (!link.embed && !!link.lives) linkDest = link.lives;
+                    a(href=linkDest) !{link.text}
+
+        include partials/site-map
+        include partials/footer

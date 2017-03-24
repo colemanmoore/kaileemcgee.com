@@ -1,0 +1,17 @@
+{
+  "name": "kaileemcgee.com",
+  "version": "1.0.1",
+  "homepage": "https://github.com/colemanmoore/kaileemcgee.com",
+  "author":  "Coleman Moore",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~3.2.1"
+  }
+}

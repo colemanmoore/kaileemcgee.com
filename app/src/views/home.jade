@@ -1,0 +1,120 @@
+extends layout1
+block page-content
+  body.tile1
+    div.wrapper-1
+      div.main.main-center
+        include partials/date
+        div.banner(style='margin-bottom: 50px')
+          img(src='../images/home/Kailee McGee Home Banner.jpg', width='1000px', height='400px')
+
+        div.post-item
+          img(src='/images/home/Kailee McGee Professional Artist.jpeg', height='600px')
+          div.caption
+            span.caption -- Kailee McGee in her studio in Echo Park, LA
+            span.caption May 14th, 2016
+
+        div.content
+          div.side-column
+            a.twitter-timeline(width='220px', height='1000px', href='https://twitter.com/kittypawsxoxo', data-widget-id="633465888130232320") Tweets by @kittpawsxoxo
+
+            div(style='padding-top:50px')
+              div
+                img(src='/images/home/clapping.gif')
+              a.flashy(href='/testimonials.html').
+                *** Watch client testimonials ***
+                CLICK HERE!!
+              div
+                img(src='/images/home/clapping.gif' style='border:0;transform:scale(-1,1); -webkit-transform:scale(-1,1); -moz-transform:scale(-1,1); -o-transform:scale(-1,1)')
+
+          div.main-column
+
+            div.post-item
+              img(src='/images/home/kailee%20mcgee%20on%20set%20espn%20.jpg', height='300px')
+              br
+              span.caption
+                a(href='https://vimeo.com/114602337') click to watch official final video
+              div.caption
+                span.caption "ESPN/Taken 3 - TV Spot 2"
+                span.caption (ESPN/FOX)
+                span.caption (Ignition Creative)
+                span.caption -- Kailee McGee on set in Beverly Hills, LA
+                span.caption November 18th, 2014
+
+            div.post-item
+              img(src='/images/dopepremiere.jpg', height='200px')
+              span.caption Award winning filmmaker, Kailee McGee, at <i>Captain America: Civil War</i> premiere in Hollywood, California.
+
+            div.post-item
+              img(src='/images/home/Kailee McGee Professional Industry.jpg', width='400px')
+              span.caption Kailee McGee on set in Laurel Canyon, Los Angeles, California.
+              span.caption July 2014.
+
+            div.post-item
+              h3 <a href="/about.html.html"><img src="/images/home/usflag.gif" width="40px"/>ABOUT KAILEE MCGEE<img src="/images/home/usflag.gif" width="40px"/></a>
+              p Kailee McGee is one of our more talented, creative female entrepreneurs. She is a freelancer writer, author, artist, and international filmmaker. Ms. McGee is a New York University Tisch School of the Arts alumni, who received high honors and acclaim even at young age for her written words and motion pictures.
+              div
+                a(href='/about.html.html' style='float:left') <img style="margin:10px" src="/images/home/Kailee McGee Laptop and Dubs.jpeg" height="300px"/>
+                div
+                  img(style='margin-right:60px', src='/images/home/Actress.gif')
+                  img(src='/images/home/Actress_3.gif')
+                  img(src='/images/home/Actress.gif')
+                  img(src='/images/home/Actress_3.gif')
+                div(style='clear:left')
+                  img(src='/images/home/Photographer_2.gif')
+                  a(href='/about.html.html') <img src="/images/home/Kailee McGee Sleepin Til Midnight.jpeg" height="300px"/>
+
+
+            div.post-item
+              img(src='/images/home/kailee%20mcgee%20scott%20wheeler.jpg', width='400px')
+              div.caption Kailee McGee with director and VFX supervisor, Scott Wheeler on Professional Film Set in Wales, England, UK, August 2015
+
+            div.post-item.pod
+              div
+                a(href='/projects.html')
+                  img(src='/images/home/beginning%20of%20mums%20bday%2015.gif', width='400px')
+              div
+                img(src='/images/home/kailee%20mcgee%20fashionate%20inspiration.jpg', width='210px')
+                a(href='/filmandvideo.html')
+                  img(src='/images/home/kailee%20mcgee%20still.jpg', width='300px')
+              div(style='display:block')
+                a(href='https://instagram.com/kittypawsxoxo') Follow Kailee on Instagram
+              div
+                a(href='/workshopsandseminars.html')
+                  img(src='/images/home/kailee%20mcgee%20believe%20in%20yourself.jpg', width='300px')
+              div <img src="/images/home/McGee Monthly Newsletter.jpg" width="250px"/><img src="/images/home/testimonals image.jpeg" width="100px"/>
+              span.caption(style='font-size:medium')
+                a.flashy(href='https://vine.co/v/hKpLWBIxYZ1') Click here to subscribe to the McGee Monthly Newsletter!!
+
+            div.post-item
+              img(src='/images/home/snapchat.png', width='70px')
+              span.caption(style='font-size:medium')
+                a.flashy(href='https://www.youtube.com/watch?v=YK87hNHU26c') Check out what Kailee's doing on Snapchat!
+
+            div.post-item
+              img(src='/images/home/kailee mcgee artist.jpg', width='600px')
+              span.caption Still from Ms. McGee's Art Installation, <i>Pieces of Da Cess</i>, at the Museum of Moving Image, Queens, NY
+
+            div.post-item
+              img(src='/images/home/Kailee McGee journalism professional.jpg', width='400px')
+
+            div.post-item
+              span.caption(style='font-size:16px;font-style:italic')
+                a.flashy(href='https://www.google.co.uk/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=kailee+mcgee&tbm=nws') Read about Kailee in the news!!
+              img(src='/images/home/kailee-hat.jpg' width='400px')
+
+        div.post-item
+          a(href='https://www.facebook.com/javelina')
+            img(src='../images/buttons/facebook_2015_logo_detail.png', width='200px')
+          span.caption Let's Connect and Network!
+
+        div(style="margin-bottom: 20px;")
+          div(style='display:inline-block; height:100%; vertical-align:middle')
+            img(src='/images/buttons/three_gears.gif' width='40px')
+          div(style='display:inline-block; height:100%; vertical-align:middle; margin:0 5px')
+            include partials/visitor-counter
+          div(style='display:inline-block; height:100%; vertical-align:middle')
+            img(src='/images/buttons/three_gears.gif' width='40px')
+
+        include partials/site-map
+        include partials/badges
+        include partials/footer

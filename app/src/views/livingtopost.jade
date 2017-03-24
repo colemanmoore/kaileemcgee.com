@@ -1,0 +1,29 @@
+extends layout1
+block added-stylesheets
+  link(rel='stylesheet', href='/css/justifiedGallery.min.css')
+block page-content
+  body.tile1
+    div.wrapper-1
+      div.main.main-center
+        include partials/date
+
+        div.post-item#living-to-post
+          each image in livingToPost
+            - var thumbnail = image.thumb || image.src
+            a(href='/images/livingtopost/' + image.src)
+              img(src='/images/livingtopost/thumbnails/' + thumbnail)
+
+        include partials/site-map
+        include partials/badges
+        include partials/footer
+
+    script(src='/js/jquery.min.js')
+    script(src='/js/jquery.justifiedGallery.min.js')
+    script.
+      $('#living-to-post').justifiedGallery({
+        waitThumbnailsLoad: true,
+        margins: 7,
+        rowHeight: 200,
+        randomize: true,
+        imagesAnimationDuration: 500
+      });

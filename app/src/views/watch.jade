@@ -1,0 +1,7 @@
+extends layout1
+block page-content
+  body.other-stars
+    div
+      div#watch-here(class= embedCode.length > 1 ? 'multiple' : '')
+        each emb in embedCode
+          !{emb}
