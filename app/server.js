@@ -4,8 +4,9 @@ var
   path = require('path'),
   express = require('express'),
   app = express(),
-  env = app.get('NODE_ENV') || process.env.NODE_ENV || 'production';
+  env = app.get('NODE_ENV') || process.env.NODE_ENV;
 
+app.set('env', env || 'production');
 app.set('port', process.env.PORT || 3333);
 app.set('view engine', 'jade');
 app.set('views', path.join(__dirname, 'src/views'));
