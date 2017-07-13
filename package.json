@@ -33,6 +33,9 @@
   "devDependencies": {
     "connect-livereload": "0.6.0"
   },
+  "engines": {
+    "node": "6.11.1"
+  },
   "main": "gulpfile.js",
   "author": "Coleman Moore",
   "license": "ISC",
