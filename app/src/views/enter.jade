@@ -1,11 +1,58 @@
 extends layout1
 block page-content
   body
-    div.main.main-center(style='background:none')
-      div.banner
-        img(src='/images/enter/enter%20banner.gif')
-      div
-        img(src='/images/enter/bluelite.gif', width='40%')
-      div(style='margin-top:20px')
-        a(href='/home.html')
-          img(src='/images/enter/kailees%20heart.gif')
+    div#theentireuniverse
+      div#perceive
+        div.judge-side
+          div.judge-container
+            img.go-to-judge(src='/images/enter/juudge.png', width='20%')
+        div.perceive-side
+          div.perceive-container
+            img.go-to-perceive(src='/images/enter/perceive.png', width='20%')
+      div#enter.catcursor
+        div.main-enter-screen.main-center
+          div.banner
+            img(src='/images/enter/enter%20banner.gif')
+          div
+            img(src='/images/enter/bluelite.gif', width='40%')
+          div(style='margin-top:20px')
+            a(href='/home.html')
+              img(src='/images/enter/kailees%20heart.gif')
+
+  script.
+    ready(function() {
+      var theEntireUniverse = document.getElementById('theentireuniverse');
+      var perceive = theEntireUniverse.querySelectorAll('#perceive')[0];
+      perceive.style.display = '';
+      var enterscreen = theEntireUniverse.querySelectorAll('#enter')[0];
+      enterscreen.style.display = 'none';
+
+      function onPerceiveClick() {
+        theEntireUniverse.removeChild(perceive);
+        enterscreen.style.display = '';
+        if (document.body.style.classList)
+          document.body.classList.add('stars');
+        else
+          document.body.className += ' stars';
+      }
+
+      function onJudgeClick() {
+        window.location.replace('http://kaileemcgee.work');
+      }
+
+      document.querySelectorAll('.go-to-perceive')[0].addEventListener('click',onPerceiveClick);
+      document.querySelectorAll('.go-to-judge')[0].addEventListener('click', onJudgeClick);
+    });
+
+    function ready(fn) {
+      if (document.readyState !== 'loading') {
+        fn();
+      } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', fn);
+      } else {
+        document.attachEvent('onreadystatechange', function () {
+          if (document.readyState !== 'loading')
+            fn();
+        });
+      }
+    }

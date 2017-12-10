@@ -6,8 +6,18 @@ body {
   margin: 0;
   height: 100%;
   min-height: 100%;
-  cursor: url(/images/cursors/nat733.cur), default !important;
+}
+
+#theentireuniverse {
+  height: 100%;
+}
+
+.stars {
   background: url(/images/bg/stars.gif) repeat;
+}
+
+.catcursor {
+  cursor: url(/images/cursors/nat733.cur), default !important;
 }
 
 body.tile1 {
@@ -58,7 +68,7 @@ body.other-stars {
   background-repeat: repeat;
 }
 
-a:link, a:hover, a:visited, a:active {
+.catcursor a:link, .catcursor a:hover, .catcursor a:visited, .catcursor a:active {
   cursor: url(/images/cursors/nat740.cur), default !important;
 }
 
@@ -93,6 +103,13 @@ div.wrapper-2 {
 div.main {
   width: 1000px;
   background: url(/images/bg/stars.gif);
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+div.main-enter-screen {
   color: white;
   font-size: 16px;
   text-align: center;
@@ -430,6 +447,37 @@ ul#projects-links-list li a img {
 #thumbnails .image {
   padding: 2px;
   border: 1px solid #c7a7c6;
+}
+
+
+#perceive {
+  min-height: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+@media screen and (max-width: 780px) and (orientation: portrait) {
+  #perceive {
+    flex-flow: column nowrap;
+  }
+}
+.judge-side, .perceive-side {
+  flex-grow: 1
+  flex-basis: 0
+  display: flex
+  flex-flow column nowrap
+  justify-content center
+}
+
+.perceive-side {
+  background: black;
+  color: white;
+}
+
+.judge-container, .perceive-container {
+  text-align: center
+  cursor: pointer
 }
 
 @import 'justifiedGallery.min.css'
