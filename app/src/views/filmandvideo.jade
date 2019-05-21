@@ -10,18 +10,9 @@ block page-content
 
         img(src='/images/filmandvideo/b-stuff.gif')
 
-        div#video-listing-section
-          each section in data
-            div.video-section-header
-              h2= section.sectionHeader
-            div.video-section-list
-              ul
-                each link in section.links
-                  li
-                    -
-                      var linkDest = '/watch/' + link.id;
-                      if (!link.embed && !!link.lives) linkDest = link.lives;
-                    a(href=linkDest) !{link.text}
+        div.video-section-header
+          h2
+            a.serious(href='kaileemcgee.work', style='color:white') kaileemcgee.work
 
         include partials/site-map
         include partials/footer
